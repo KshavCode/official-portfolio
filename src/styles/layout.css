@@ -1,0 +1,70 @@
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 8rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+/* Hero Split Layout */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr; /* Text takes slightly more space */
+  align-items: center;
+  gap: 4rem;
+}
+
+/* General Two-Column Grid */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 900px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .section {
+    padding: 5rem 0;
+  }
+
+  /* Reset Hero padding for mobile stacking */
+  .section:first-of-type {
+    padding-bottom: 0;
+    padding-top: 6rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr; /* Stack vertically */
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .hero-content {
+    order: 1; /* Text appears AFTER image on mobile */
+    text-align: center;
+    padding-bottom: 4rem;
+  }
+
+  .hero-image-wrapper {
+    order: -1; /* Image appears ON TOP */
+    width: 100%;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 0; 
+  }
+
+  .hero-img {
+    max-width: 350px; /* Restrict width on mobile */
+  }
+}

@@ -1,0 +1,78 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  
+  /* Background Mesh Gradient */
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(13, 148, 136, 0.08), transparent 25%), /* Teal */
+    radial-gradient(circle at 85% 30%, rgba(14, 165, 233, 0.08), transparent 25%); /* Sky Blue */
+    
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--text-main);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+/* Custom Scrollbar - Now Theme Aware */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong); /* Adapts to Dark/Light mode */
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Selection Color */
+::selection {
+  background: var(--text-accent);
+  color: white;
+}
+
+/* --- Scroll Spawn Animations --- */
+.spawn-element {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.spawn-element.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
