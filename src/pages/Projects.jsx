@@ -24,12 +24,12 @@ import TATWimg from '/techathon.jpg'
 export default function Projects() {
   const projects = [
     {
-      title: "Indian Tourism Analysis",
-      category: "Data",
-      desc: "Processed 50k+ rows of travel data to identify seasonal influx patterns.",
-      tech: ["Powerpoint", "pandas", "PowerBI", "plotly", "Excel"],
-      link: "https://github.com/KshavCode/data-analysis-case-studies/tree/master/indian-tourism-analysis" ,
-      img: ITAimg
+      title: "ARSD Saathi",
+      category: "App",
+      desc: "College app designed especially for ARSD, DU.",
+      tech: ["selenium", "API", "React Native", "Python", "Web Scraping", "Javascript"],
+      link: "https://github.com/KshavCode/arsd-saathi" ,
+      img: ARSDSimg
     },
     {
       title: "AI PhysioTherapy",
@@ -70,6 +70,14 @@ export default function Projects() {
       tech: ["React Native", "Javascript", "React"],
       link: "https://github.com/KshavCode/learn-react-native-app",
       img: LRNAimg
+    },
+    {
+      title: "Indian Tourism Analysis",
+      category: "Data",
+      desc: "Processed 50k+ rows of travel data to identify seasonal influx patterns.",
+      tech: ["Powerpoint", "pandas", "PowerBI", "plotly", "Excel"],
+      link: "https://github.com/KshavCode/data-analysis-case-studies/tree/master/indian-tourism-analysis" ,
+      img: ITAimg
     },
     {
       title: "Smart File Organizer",
@@ -174,14 +182,6 @@ export default function Projects() {
       tech: ["Machine Learning", "Kaggle", "pandas", "vectors", "numpy"],
       link: "https://github.com/KshavCode/gesture-based-volume-control" ,
       img: MRimg
-    },
-    {
-      title: "ARSD Saathi",
-      category: "App",
-      desc: "College app designed especially for ARSD, DU.",
-      tech: ["selenium", "API", "React Native", "Python", "Web Scraping", "Javascript"],
-      link: "https://github.com/KshavCode/arsd-saathi" ,
-      img: ARSDSimg
     },
   ];
 

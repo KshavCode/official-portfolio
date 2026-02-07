@@ -32,7 +32,7 @@ export default function Hero() {
             <a href="/projects" className="btn btn-primary">
               View Projects <span style={{ marginLeft: '8px' }}><ArrowRight /></span>
             </a>
-            <a href="/resume.pdf" className="btn btn-outline">
+            <a href="/resume.pdf" download="KeshavPal_resume.pdf" className="btn btn-outline">
               Resume <span style={{ marginLeft: '8px' }}><Download /></span>
             </a>
           </div>

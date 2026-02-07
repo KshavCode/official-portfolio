@@ -28,10 +28,10 @@ const ProjectCard = ({ project, index }) => {
 export default function Projects() {
   const projects = [
     {
-      title: "Indian Tourism Analysis",
-      desc: "Comprehensive analysis of seasonal travel trends using real-world datasets to predict peak influx periods.",
-      tech: "Python · Pandas · Matplotlib · Powerpoint",
-      link: "https://github.com/KshavCode/data-analysis-case-studies/tree/master/indian-tourism-analysis"
+      title: "Data Analysis Case Studies",
+      desc: "A collection of comprehensive analysis of 2k+ rows on real-world datasets to create dashboards and gain impactful insights.",
+      tech: "Python · Pandas · Matplotlib · Streamlit · PowerPoint",
+      link: "https://github.com/KshavCode/data-analysis-case-studies/"
     },
     {
       title: "TherapEase",
@@ -42,7 +42,8 @@ export default function Projects() {
     {
       title: "ARSD Saathi",
       desc: "App designed as an automation utility that logs into the ARSD College student portal with methods to get attendance, faculty, basic and subject details.",
-      tech: "React Native · FastAPI · CLI · Python"
+      tech: "React Native · FastAPI · CLI · Python · Selenium",
+      link: "https://github.com/KshavCode/arsd-saathi"
     }
   ];
 
