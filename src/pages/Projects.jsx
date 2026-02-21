@@ -20,6 +20,7 @@ import GCCimg from "/cursor.png"
 import SFOimg from "/file.jpg"
 import ARSDSimg from "/arsd.png"
 import TATWimg from '/techathon.jpg'
+import QBPimg from '/quickbill.png'
 
 export default function Projects() {
   const projects = [
@@ -28,7 +29,7 @@ export default function Projects() {
       category: "App",
       desc: "College app designed especially for ARSD, DU.",
       tech: ["selenium", "API", "React Native", "Python", "Web Scraping", "Javascript"],
-      link: "https://github.com/KshavCode/arsd-saathi" ,
+      link: "https://github.com/KshavCode/arsd-saathi-app" ,
       img: ARSDSimg
     },
     {
@@ -40,7 +41,7 @@ export default function Projects() {
       img: AIPimg
     },
     {
-      title: "Discord Bot",
+      title: "PurrBot",
       category: "Terminal",
       desc: "A powerful multi-command Discord bot, featuring slash commands, moderation tools, and more.",
       tech: ["Python", "flask", "discord.py", "JSON"],
@@ -80,11 +81,19 @@ export default function Projects() {
       img: ITAimg
     },
     {
-      title: "Smart File Organizer",
+      title: "QuickBill",
+      category: "App",
+      desc: "A lightweight, GUI-based desktop application designed to streamline the billing process for small businesses and wholesale shopkeepers.",
+      tech: ["GUI", "sqlite3", "python", "tkinter", "automation"],
+      link: "https://github.com/KshavCode/quickbill-py" ,
+      img: QBPimg
+    },
+    {
+      title: "Sortify",
       category: "App",
       desc: "The One tap solution to 'sort and store in a folder' solution!",
       tech: ["Python", "GUI", "os", "tkinter", "CLI"],
-      link: "https://github.com/KshavCode/smart-file-organizer" ,
+      link: "https://github.com/KshavCode/sortify" ,
       img: SFOimg
     },
     {
@@ -128,7 +137,7 @@ export default function Projects() {
       img: Mimg
     },
     {
-      title: "2 Player Snakes Game",
+      title: "2 Player Snakes",
       category: "App",
       desc: "Can you complete the puzzle in the least amount of time?",
       tech: ["pygame", "2D", "Graphics", "GUI"],
