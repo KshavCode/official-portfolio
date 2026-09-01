@@ -1,35 +1,53 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 19px;
 }
 
 body {
   margin: 0;
+  padding: 0;
   background-color: var(--bg);
   
-  /* Background Mesh Gradient */
-  background-image: 
-    radial-gradient(circle at 15% 50%, rgba(13, 148, 136, 0.08), transparent 25%), /* Teal */
-    radial-gradient(circle at 85% 30%, rgba(14, 165, 233, 0.08), transparent 25%); /* Sky Blue */
-    
+  /* Important: overflow-x: clip allows position: sticky to work properly while preventing side scrolling */
+  overflow-x: clip;
+
+  /* Background Doodle Dot-Grid Pattern */
+  background-image: radial-gradient(var(--bg-dot, rgba(0, 0, 0, 0.1)) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  background-position: 0 0;
   background-attachment: fixed;
-  background-size: cover;
+
   color: var(--text-main);
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-body);
+  font-size: 1.15rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.2;
   margin: 0;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
   color: var(--text-main);
+}
+
+p {
+  margin-top: 0;
 }
 
 a {
@@ -38,41 +56,103 @@ a {
   transition: all 0.2s ease;
 }
 
-/* Custom Scrollbar - Now Theme Aware */
+button {
+  font-family: inherit;
+}
+
+/* Marker Highlighter Selection */
+::selection {
+  background: var(--accent-yellow);
+  color: #18181b;
+}
+
+/* Sketched Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
+  border-left: 1px dashed var(--bg-subtle);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border-strong); /* Adapts to Dark/Light mode */
-  border-radius: 10px;
+  background: var(--border-color);
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--bg);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-muted);
+  background: var(--text-accent);
 }
 
-/* Selection Color */
-::selection {
-  background: var(--text-accent);
-  color: white;
+/* Cursor Ink Splat Animations */
+.ink-splat {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.8;
+  animation: splatFade 1.5s forwards ease-out;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; /* Organic shape */
+  mix-blend-mode: multiply;
+  will-change: transform, opacity;
+}
+[data-theme="dark"] .ink-splat {
+  mix-blend-mode: screen;
+}
+
+@keyframes splatFade {
+  0% { opacity: 0.8; transform: translate(-50%, -50%) scale(0.2) rotate(0deg); }
+  15% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.3) rotate(20deg); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(0.9) rotate(60deg); }
+}
+
+/* Highlighter accent text */
+.highlight {
+  background: var(--accent-yellow);
+  color: #18181b;
+  padding: 0 6px;
+  border-radius: 4px;
+  display: inline-block;
+  transform: rotate(-1deg);
+  box-shadow: 2px 2px 0 var(--shadow-color);
+}
+
+[data-theme="dark"] .highlight {
+  color: #ffffff;
 }
 
 /* --- Scroll Spawn Animations --- */
 .spawn-element {
   opacity: 0;
-  transform: translateY(30px) scale(0.95);
-  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), 
-              transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform: translateY(28px) scale(0.97) rotate(-1.5deg);
+  transition:
+    opacity 0.7s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
   will-change: opacity, transform;
 }
 
 .spawn-element.is-visible {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translateY(0) scale(1) rotate(0deg);
 }
 
-.delay-100 { transition-delay: 0.1s; }
-.delay-200 { transition-delay: 0.2s; }
-.delay-300 { transition-delay: 0.3s; }
+.delay-50 {
+  transition-delay: 0.05s;
+}
+.delay-100 {
+  transition-delay: 0.1s;
+}
+.delay-150 {
+  transition-delay: 0.15s;
+}
+.delay-200 {
+  transition-delay: 0.2s;
+}
+.delay-300 {
+  transition-delay: 0.3s;
+}
+
+/* App container layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
